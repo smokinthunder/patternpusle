@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:patternulse/presentation/core/theme.dart';
+import 'package:patternulse/presentation/test_screen/drawing_board.dart';
+import 'package:patternulse/presentation/test_screen/drawing_screen.dart';
 
 class SpecificTestScreen extends StatelessWidget {
   const SpecificTestScreen({super.key});
@@ -49,6 +51,10 @@ class SpecificTestScreen extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         // Handle test selection
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const DrawingBoard()),
+        );
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: savoyBlue,

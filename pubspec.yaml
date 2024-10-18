@@ -26,6 +26,9 @@ dependencies:
   google_fonts: ^6.2.1
   injectable: ^2.4.4
   numberpicker: ^2.1.2
+  # scribble: ^0.10.0+1
+  
+  value_notifier_tools: ^0.1.2
 
 dev_dependencies:
   auto_route_generator: ^8.0.0
@@ -43,3 +46,4 @@ flutter:
   assets:
     - assets/images/
     - assets/images/get_started/girl-drawing-with-pencils-lying-floor_3446-288-removebg-preview.png
+    - assets/hint_image.png
