@@ -26,7 +26,12 @@ dependencies:
   google_fonts: ^6.2.1
   injectable: ^2.4.4
   numberpicker: ^2.1.2
-  # scribble: ^0.10.0+1
+  scribble: 
+    git:
+      url: https://github.com/smokinthunder/scribble.git
+      ref: main
+      path: 
+
   
   value_notifier_tools: ^0.1.2
 

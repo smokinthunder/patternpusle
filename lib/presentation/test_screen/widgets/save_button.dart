@@ -2,8 +2,7 @@ import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/core/libraries/scribble-0.10.0+1/lib/scribble.dart';
-
+import 'package:scribble/scribble.dart';
 Widget saveButton(BuildContext context, ScribbleNotifier notifier) {
   return IconButton(
     iconSize: 35,
