@@ -21,7 +21,8 @@ DrawingModel _$DrawingModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DrawingModel {
   String get imageUrl => throw _privateConstructorUsedError;
-  List<DrawingPoint> get drawingPoints => throw _privateConstructorUsedError;
+  List<List<DrawingPoint>> get drawingPoints =>
+      throw _privateConstructorUsedError;
   bool get normal => throw _privateConstructorUsedError;
   String get expectedWord => throw _privateConstructorUsedError;
 
@@ -43,7 +44,7 @@ abstract class $DrawingModelCopyWith<$Res> {
   @useResult
   $Res call(
       {String imageUrl,
-      List<DrawingPoint> drawingPoints,
+      List<List<DrawingPoint>> drawingPoints,
       bool normal,
       String expectedWord});
 }
@@ -76,7 +77,7 @@ class _$DrawingModelCopyWithImpl<$Res, $Val extends DrawingModel>
       drawingPoints: null == drawingPoints
           ? _value.drawingPoints
           : drawingPoints // ignore: cast_nullable_to_non_nullable
-              as List<DrawingPoint>,
+              as List<List<DrawingPoint>>,
       normal: null == normal
           ? _value.normal
           : normal // ignore: cast_nullable_to_non_nullable
@@ -99,7 +100,7 @@ abstract class _$$DrawingModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {String imageUrl,
-      List<DrawingPoint> drawingPoints,
+      List<List<DrawingPoint>> drawingPoints,
       bool normal,
       String expectedWord});
 }
@@ -130,7 +131,7 @@ class __$$DrawingModelImplCopyWithImpl<$Res>
       drawingPoints: null == drawingPoints
           ? _value._drawingPoints
           : drawingPoints // ignore: cast_nullable_to_non_nullable
-              as List<DrawingPoint>,
+              as List<List<DrawingPoint>>,
       normal: null == normal
           ? _value.normal
           : normal // ignore: cast_nullable_to_non_nullable
@@ -148,7 +149,7 @@ class __$$DrawingModelImplCopyWithImpl<$Res>
 class _$DrawingModelImpl implements _DrawingModel {
   const _$DrawingModelImpl(
       {required this.imageUrl,
-      required final List<DrawingPoint> drawingPoints,
+      required final List<List<DrawingPoint>> drawingPoints,
       required this.normal,
       required this.expectedWord})
       : _drawingPoints = drawingPoints;
@@ -158,9 +159,9 @@ class _$DrawingModelImpl implements _DrawingModel {
 
   @override
   final String imageUrl;
-  final List<DrawingPoint> _drawingPoints;
+  final List<List<DrawingPoint>> _drawingPoints;
   @override
-  List<DrawingPoint> get drawingPoints {
+  List<List<DrawingPoint>> get drawingPoints {
     if (_drawingPoints is EqualUnmodifiableListView) return _drawingPoints;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_drawingPoints);
@@ -218,7 +219,7 @@ class _$DrawingModelImpl implements _DrawingModel {
 abstract class _DrawingModel implements DrawingModel {
   const factory _DrawingModel(
       {required final String imageUrl,
-      required final List<DrawingPoint> drawingPoints,
+      required final List<List<DrawingPoint>> drawingPoints,
       required final bool normal,
       required final String expectedWord}) = _$DrawingModelImpl;
 
@@ -228,7 +229,7 @@ abstract class _DrawingModel implements DrawingModel {
   @override
   String get imageUrl;
   @override
-  List<DrawingPoint> get drawingPoints;
+  List<List<DrawingPoint>> get drawingPoints;
   @override
   bool get normal;
   @override

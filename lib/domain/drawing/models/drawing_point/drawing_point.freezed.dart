@@ -22,7 +22,7 @@ DrawingPoint _$DrawingPointFromJson(Map<String, dynamic> json) {
 mixin _$DrawingPoint {
   double get x => throw _privateConstructorUsedError;
   double get y => throw _privateConstructorUsedError;
-  DateTime get timeStamp => throw _privateConstructorUsedError;
+  int get timeStamp => throw _privateConstructorUsedError;
   double get pressure => throw _privateConstructorUsedError;
 
   /// Serializes this DrawingPoint to a JSON map.
@@ -41,7 +41,7 @@ abstract class $DrawingPointCopyWith<$Res> {
           DrawingPoint value, $Res Function(DrawingPoint) then) =
       _$DrawingPointCopyWithImpl<$Res, DrawingPoint>;
   @useResult
-  $Res call({double x, double y, DateTime timeStamp, double pressure});
+  $Res call({double x, double y, int timeStamp, double pressure});
 }
 
 /// @nodoc
@@ -76,7 +76,7 @@ class _$DrawingPointCopyWithImpl<$Res, $Val extends DrawingPoint>
       timeStamp: null == timeStamp
           ? _value.timeStamp
           : timeStamp // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as int,
       pressure: null == pressure
           ? _value.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
@@ -93,7 +93,7 @@ abstract class _$$DrawingPointImplCopyWith<$Res>
       __$$DrawingPointImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double x, double y, DateTime timeStamp, double pressure});
+  $Res call({double x, double y, int timeStamp, double pressure});
 }
 
 /// @nodoc
@@ -126,7 +126,7 @@ class __$$DrawingPointImplCopyWithImpl<$Res>
       timeStamp: null == timeStamp
           ? _value.timeStamp
           : timeStamp // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as int,
       pressure: null == pressure
           ? _value.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
@@ -152,7 +152,7 @@ class _$DrawingPointImpl implements _DrawingPoint {
   @override
   final double y;
   @override
-  final DateTime timeStamp;
+  final int timeStamp;
   @override
   final double pressure;
 
@@ -198,7 +198,7 @@ abstract class _DrawingPoint implements DrawingPoint {
   const factory _DrawingPoint(
       {required final double x,
       required final double y,
-      required final DateTime timeStamp,
+      required final int timeStamp,
       required final double pressure}) = _$DrawingPointImpl;
 
   factory _DrawingPoint.fromJson(Map<String, dynamic> json) =
@@ -209,7 +209,7 @@ abstract class _DrawingPoint implements DrawingPoint {
   @override
   double get y;
   @override
-  DateTime get timeStamp;
+  int get timeStamp;
   @override
   double get pressure;
 

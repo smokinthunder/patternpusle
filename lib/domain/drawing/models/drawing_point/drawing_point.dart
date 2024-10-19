@@ -7,7 +7,7 @@ class DrawingPoint with _$DrawingPoint {
   const factory DrawingPoint({
     required double x,
     required double y,
-    required DateTime timeStamp,
+    required int timeStamp,
     required double pressure
   }) = _DrawingPoint;
 

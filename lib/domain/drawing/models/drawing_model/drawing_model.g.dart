@@ -10,7 +10,9 @@ _$DrawingModelImpl _$$DrawingModelImplFromJson(Map<String, dynamic> json) =>
     _$DrawingModelImpl(
       imageUrl: json['imageUrl'] as String,
       drawingPoints: (json['drawingPoints'] as List<dynamic>)
-          .map((e) => DrawingPoint.fromJson(e as Map<String, dynamic>))
+          .map((e) => (e as List<dynamic>)
+              .map((e) => DrawingPoint.fromJson(e as Map<String, dynamic>))
+              .toList())
           .toList(),
       normal: json['normal'] as bool,
       expectedWord: json['expectedWord'] as String,

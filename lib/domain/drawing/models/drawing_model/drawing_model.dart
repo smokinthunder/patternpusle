@@ -7,7 +7,7 @@ part 'drawing_model.g.dart';
 class DrawingModel with _$DrawingModel {
   const factory DrawingModel({
     required String imageUrl,
-    required List<DrawingPoint> drawingPoints,
+    required List<List<DrawingPoint>> drawingPoints,
     required bool normal,
     required String expectedWord,
   }) = _DrawingModel;

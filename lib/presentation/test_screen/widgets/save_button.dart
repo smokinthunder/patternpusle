@@ -1,8 +1,11 @@
 import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:patternulse/application/drawing_application/bloc/drawing_application_bloc.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:scribble/scribble.dart';
+
 Widget saveButton(BuildContext context, ScribbleNotifier notifier) {
   return IconButton(
     iconSize: 35,
@@ -45,7 +48,7 @@ Future<void> displayImage(ByteData imageData, context) async {
 
 void _showImage(BuildContext context, ScribbleNotifier notifier) async {
   final image = notifier.renderImage();
-  log(notifier.currentSketch.toString());
+  // log(notifier.currentSketch.lines[2].points.toString());
   showDialog(
     context: context,
     builder: (context) => AlertDialog(
@@ -64,9 +67,13 @@ void _showImage(BuildContext context, ScribbleNotifier notifier) async {
           child: const Text("Close"),
         ),
         TextButton(
-          onPressed: Navigator.of(context).pop,
+          onPressed: () {
+            context.read<DrawingApplicationBloc>().add(
+                  DrawingApplicationEvent.submit(notifier),
+                );
+          },
           child: const Text("Submit"),
-        )
+        ),
       ],
     ),
   );
