@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:patternulse/application/select_test/select_test.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:patternulse/presentation/core/theme.dart';
 import 'package:patternulse/presentation/test_screen/drawing_board.dart';
-import 'package:patternulse/presentation/test_screen/drawing_screen.dart';
+// import 'package:patternulse/presentation/test_screen/drawing_screen.dart';
 
 class SpecificTestScreen extends StatelessWidget {
   const SpecificTestScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Scaffold(
       backgroundColor: antiflashWhite,
       appBar: AppBar(
@@ -39,7 +40,7 @@ class SpecificTestScreen extends StatelessWidget {
             mainAxisSpacing: 16,
           ),
           itemBuilder: (context, index) {
-            return _buildTestItem(context, 'Test ${index + 1}');
+            return _buildTestItem(context, 'Test ${index + 1}', index);
           },
           itemCount: 9, // You can adjust this number as needed
         ),
@@ -47,9 +48,11 @@ class SpecificTestScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTestItem(BuildContext context, String title) {
+  Widget _buildTestItem(context, String title, int index) {
     return ElevatedButton(
       onPressed: () {
+        SelectTest.changeSpcTest(index);
+
         // Handle test selection
         Navigator.push(
           context,

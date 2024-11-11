@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:patternulse/application/child_application/add_child/add_child_bloc.dart';
+// import 'package:patternulse/application/child_application/add_child/add_child_bloc.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:patternulse/presentation/core/theme.dart';
 import 'package:patternulse/presentation/home_screen/widgets/app_bar_widget.dart';
@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     //  context.read<AddChildBloc>().add(
     //       const AddChildEvent.reset(),
     //     );

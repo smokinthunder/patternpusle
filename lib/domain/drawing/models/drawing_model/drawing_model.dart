@@ -3,13 +3,16 @@ import 'package:patternulse/domain/drawing/models/drawing_point/drawing_point.da
 part 'drawing_model.freezed.dart';
 part 'drawing_model.g.dart';
 
+// @JsonSerializable(explicitToJson: true)
 @freezed
 class DrawingModel with _$DrawingModel {
   const factory DrawingModel({
+    required String drawingUid,
     required String imageUrl,
-    required List<List<DrawingPoint>> drawingPoints,
-    required bool normal,
-    required String expectedWord,
+    required Map<int, List<DrawingPoint>> drawingPoints,
+    required int childUid,
+    required int genTestId,
+    required int spcTestId,
   }) = _DrawingModel;
 
   factory DrawingModel.fromJson(Map<String, dynamic> json) =>

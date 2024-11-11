@@ -20,6 +20,7 @@ AddChildModel _$AddChildModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AddChildModel {
+  int get uid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get age => throw _privateConstructorUsedError;
   int get gradeIndex => throw _privateConstructorUsedError;
@@ -43,7 +44,12 @@ abstract class $AddChildModelCopyWith<$Res> {
       _$AddChildModelCopyWithImpl<$Res, AddChildModel>;
   @useResult
   $Res call(
-      {String name, int age, int gradeIndex, String gender, bool isPending});
+      {int uid,
+      String name,
+      int age,
+      int gradeIndex,
+      String gender,
+      bool isPending});
 }
 
 /// @nodoc
@@ -61,6 +67,7 @@ class _$AddChildModelCopyWithImpl<$Res, $Val extends AddChildModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uid = null,
     Object? name = null,
     Object? age = null,
     Object? gradeIndex = null,
@@ -68,6 +75,10 @@ class _$AddChildModelCopyWithImpl<$Res, $Val extends AddChildModel>
     Object? isPending = null,
   }) {
     return _then(_value.copyWith(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -101,7 +112,12 @@ abstract class _$$AddChildModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name, int age, int gradeIndex, String gender, bool isPending});
+      {int uid,
+      String name,
+      int age,
+      int gradeIndex,
+      String gender,
+      bool isPending});
 }
 
 /// @nodoc
@@ -117,6 +133,7 @@ class __$$AddChildModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uid = null,
     Object? name = null,
     Object? age = null,
     Object? gradeIndex = null,
@@ -124,6 +141,10 @@ class __$$AddChildModelImplCopyWithImpl<$Res>
     Object? isPending = null,
   }) {
     return _then(_$AddChildModelImpl(
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -152,7 +173,8 @@ class __$$AddChildModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AddChildModelImpl implements _AddChildModel {
   const _$AddChildModelImpl(
-      {required this.name,
+      {required this.uid,
+      required this.name,
       required this.age,
       required this.gradeIndex,
       required this.gender,
@@ -161,6 +183,8 @@ class _$AddChildModelImpl implements _AddChildModel {
   factory _$AddChildModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AddChildModelImplFromJson(json);
 
+  @override
+  final int uid;
   @override
   final String name;
   @override
@@ -174,7 +198,7 @@ class _$AddChildModelImpl implements _AddChildModel {
 
   @override
   String toString() {
-    return 'AddChildModel(name: $name, age: $age, gradeIndex: $gradeIndex, gender: $gender, isPending: $isPending)';
+    return 'AddChildModel(uid: $uid, name: $name, age: $age, gradeIndex: $gradeIndex, gender: $gender, isPending: $isPending)';
   }
 
   @override
@@ -182,6 +206,7 @@ class _$AddChildModelImpl implements _AddChildModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddChildModelImpl &&
+            (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.age, age) || other.age == age) &&
             (identical(other.gradeIndex, gradeIndex) ||
@@ -194,7 +219,7 @@ class _$AddChildModelImpl implements _AddChildModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, age, gradeIndex, gender, isPending);
+      Object.hash(runtimeType, uid, name, age, gradeIndex, gender, isPending);
 
   /// Create a copy of AddChildModel
   /// with the given fields replaced by the non-null parameter values.
@@ -214,7 +239,8 @@ class _$AddChildModelImpl implements _AddChildModel {
 
 abstract class _AddChildModel implements AddChildModel {
   const factory _AddChildModel(
-      {required final String name,
+      {required final int uid,
+      required final String name,
       required final int age,
       required final int gradeIndex,
       required final String gender,
@@ -223,6 +249,8 @@ abstract class _AddChildModel implements AddChildModel {
   factory _AddChildModel.fromJson(Map<String, dynamic> json) =
       _$AddChildModelImpl.fromJson;
 
+  @override
+  int get uid;
   @override
   String get name;
   @override

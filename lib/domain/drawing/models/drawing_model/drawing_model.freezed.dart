@@ -20,11 +20,13 @@ DrawingModel _$DrawingModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DrawingModel {
+  String get drawingUid => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
-  List<List<DrawingPoint>> get drawingPoints =>
+  Map<int, List<DrawingPoint>> get drawingPoints =>
       throw _privateConstructorUsedError;
-  bool get normal => throw _privateConstructorUsedError;
-  String get expectedWord => throw _privateConstructorUsedError;
+  int get childUid => throw _privateConstructorUsedError;
+  int get genTestId => throw _privateConstructorUsedError;
+  int get spcTestId => throw _privateConstructorUsedError;
 
   /// Serializes this DrawingModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,10 +45,12 @@ abstract class $DrawingModelCopyWith<$Res> {
       _$DrawingModelCopyWithImpl<$Res, DrawingModel>;
   @useResult
   $Res call(
-      {String imageUrl,
-      List<List<DrawingPoint>> drawingPoints,
-      bool normal,
-      String expectedWord});
+      {String drawingUid,
+      String imageUrl,
+      Map<int, List<DrawingPoint>> drawingPoints,
+      int childUid,
+      int genTestId,
+      int spcTestId});
 }
 
 /// @nodoc
@@ -64,12 +68,18 @@ class _$DrawingModelCopyWithImpl<$Res, $Val extends DrawingModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? drawingUid = null,
     Object? imageUrl = null,
     Object? drawingPoints = null,
-    Object? normal = null,
-    Object? expectedWord = null,
+    Object? childUid = null,
+    Object? genTestId = null,
+    Object? spcTestId = null,
   }) {
     return _then(_value.copyWith(
+      drawingUid: null == drawingUid
+          ? _value.drawingUid
+          : drawingUid // ignore: cast_nullable_to_non_nullable
+              as String,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -77,15 +87,19 @@ class _$DrawingModelCopyWithImpl<$Res, $Val extends DrawingModel>
       drawingPoints: null == drawingPoints
           ? _value.drawingPoints
           : drawingPoints // ignore: cast_nullable_to_non_nullable
-              as List<List<DrawingPoint>>,
-      normal: null == normal
-          ? _value.normal
-          : normal // ignore: cast_nullable_to_non_nullable
-              as bool,
-      expectedWord: null == expectedWord
-          ? _value.expectedWord
-          : expectedWord // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<int, List<DrawingPoint>>,
+      childUid: null == childUid
+          ? _value.childUid
+          : childUid // ignore: cast_nullable_to_non_nullable
+              as int,
+      genTestId: null == genTestId
+          ? _value.genTestId
+          : genTestId // ignore: cast_nullable_to_non_nullable
+              as int,
+      spcTestId: null == spcTestId
+          ? _value.spcTestId
+          : spcTestId // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -99,10 +113,12 @@ abstract class _$$DrawingModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String imageUrl,
-      List<List<DrawingPoint>> drawingPoints,
-      bool normal,
-      String expectedWord});
+      {String drawingUid,
+      String imageUrl,
+      Map<int, List<DrawingPoint>> drawingPoints,
+      int childUid,
+      int genTestId,
+      int spcTestId});
 }
 
 /// @nodoc
@@ -118,12 +134,18 @@ class __$$DrawingModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? drawingUid = null,
     Object? imageUrl = null,
     Object? drawingPoints = null,
-    Object? normal = null,
-    Object? expectedWord = null,
+    Object? childUid = null,
+    Object? genTestId = null,
+    Object? spcTestId = null,
   }) {
     return _then(_$DrawingModelImpl(
+      drawingUid: null == drawingUid
+          ? _value.drawingUid
+          : drawingUid // ignore: cast_nullable_to_non_nullable
+              as String,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -131,15 +153,19 @@ class __$$DrawingModelImplCopyWithImpl<$Res>
       drawingPoints: null == drawingPoints
           ? _value._drawingPoints
           : drawingPoints // ignore: cast_nullable_to_non_nullable
-              as List<List<DrawingPoint>>,
-      normal: null == normal
-          ? _value.normal
-          : normal // ignore: cast_nullable_to_non_nullable
-              as bool,
-      expectedWord: null == expectedWord
-          ? _value.expectedWord
-          : expectedWord // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<int, List<DrawingPoint>>,
+      childUid: null == childUid
+          ? _value.childUid
+          : childUid // ignore: cast_nullable_to_non_nullable
+              as int,
+      genTestId: null == genTestId
+          ? _value.genTestId
+          : genTestId // ignore: cast_nullable_to_non_nullable
+              as int,
+      spcTestId: null == spcTestId
+          ? _value.spcTestId
+          : spcTestId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -148,33 +174,39 @@ class __$$DrawingModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DrawingModelImpl implements _DrawingModel {
   const _$DrawingModelImpl(
-      {required this.imageUrl,
-      required final List<List<DrawingPoint>> drawingPoints,
-      required this.normal,
-      required this.expectedWord})
+      {required this.drawingUid,
+      required this.imageUrl,
+      required final Map<int, List<DrawingPoint>> drawingPoints,
+      required this.childUid,
+      required this.genTestId,
+      required this.spcTestId})
       : _drawingPoints = drawingPoints;
 
   factory _$DrawingModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$DrawingModelImplFromJson(json);
 
   @override
-  final String imageUrl;
-  final List<List<DrawingPoint>> _drawingPoints;
+  final String drawingUid;
   @override
-  List<List<DrawingPoint>> get drawingPoints {
-    if (_drawingPoints is EqualUnmodifiableListView) return _drawingPoints;
+  final String imageUrl;
+  final Map<int, List<DrawingPoint>> _drawingPoints;
+  @override
+  Map<int, List<DrawingPoint>> get drawingPoints {
+    if (_drawingPoints is EqualUnmodifiableMapView) return _drawingPoints;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_drawingPoints);
+    return EqualUnmodifiableMapView(_drawingPoints);
   }
 
   @override
-  final bool normal;
+  final int childUid;
   @override
-  final String expectedWord;
+  final int genTestId;
+  @override
+  final int spcTestId;
 
   @override
   String toString() {
-    return 'DrawingModel(imageUrl: $imageUrl, drawingPoints: $drawingPoints, normal: $normal, expectedWord: $expectedWord)';
+    return 'DrawingModel(drawingUid: $drawingUid, imageUrl: $imageUrl, drawingPoints: $drawingPoints, childUid: $childUid, genTestId: $genTestId, spcTestId: $spcTestId)';
   }
 
   @override
@@ -182,23 +214,30 @@ class _$DrawingModelImpl implements _DrawingModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DrawingModelImpl &&
+            (identical(other.drawingUid, drawingUid) ||
+                other.drawingUid == drawingUid) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             const DeepCollectionEquality()
                 .equals(other._drawingPoints, _drawingPoints) &&
-            (identical(other.normal, normal) || other.normal == normal) &&
-            (identical(other.expectedWord, expectedWord) ||
-                other.expectedWord == expectedWord));
+            (identical(other.childUid, childUid) ||
+                other.childUid == childUid) &&
+            (identical(other.genTestId, genTestId) ||
+                other.genTestId == genTestId) &&
+            (identical(other.spcTestId, spcTestId) ||
+                other.spcTestId == spcTestId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      drawingUid,
       imageUrl,
       const DeepCollectionEquality().hash(_drawingPoints),
-      normal,
-      expectedWord);
+      childUid,
+      genTestId,
+      spcTestId);
 
   /// Create a copy of DrawingModel
   /// with the given fields replaced by the non-null parameter values.
@@ -218,22 +257,28 @@ class _$DrawingModelImpl implements _DrawingModel {
 
 abstract class _DrawingModel implements DrawingModel {
   const factory _DrawingModel(
-      {required final String imageUrl,
-      required final List<List<DrawingPoint>> drawingPoints,
-      required final bool normal,
-      required final String expectedWord}) = _$DrawingModelImpl;
+      {required final String drawingUid,
+      required final String imageUrl,
+      required final Map<int, List<DrawingPoint>> drawingPoints,
+      required final int childUid,
+      required final int genTestId,
+      required final int spcTestId}) = _$DrawingModelImpl;
 
   factory _DrawingModel.fromJson(Map<String, dynamic> json) =
       _$DrawingModelImpl.fromJson;
 
   @override
+  String get drawingUid;
+  @override
   String get imageUrl;
   @override
-  List<List<DrawingPoint>> get drawingPoints;
+  Map<int, List<DrawingPoint>> get drawingPoints;
   @override
-  bool get normal;
+  int get childUid;
   @override
-  String get expectedWord;
+  int get genTestId;
+  @override
+  int get spcTestId;
 
   /// Create a copy of DrawingModel
   /// with the given fields replaced by the non-null parameter values.

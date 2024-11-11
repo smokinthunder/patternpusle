@@ -1,12 +1,14 @@
-import 'dart:developer';
+// import 'dart:developer';
 import 'dart:typed_data';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patternulse/application/drawing_application/bloc/drawing_application_bloc.dart';
+import 'package:patternulse/domain/core/di/injectable.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:scribble/scribble.dart';
 
-Widget saveButton(BuildContext context, ScribbleNotifier notifier) {
+Widget saveButton(context, ScribbleNotifier notifier) {
   return IconButton(
     iconSize: 35,
     color: tangBlue,
@@ -46,8 +48,9 @@ Future<void> displayImage(ByteData imageData, context) async {
   );
 }
 
-void _showImage(BuildContext context, ScribbleNotifier notifier) async {
+void _showImage(context, ScribbleNotifier notifier) async {
   final image = notifier.renderImage();
+
   // log(notifier.currentSketch.lines[2].points.toString());
   showDialog(
     context: context,
@@ -66,13 +69,38 @@ void _showImage(BuildContext context, ScribbleNotifier notifier) async {
           onPressed: Navigator.of(context).pop,
           child: const Text("Close"),
         ),
-        TextButton(
-          onPressed: () {
-            context.read<DrawingApplicationBloc>().add(
-                  DrawingApplicationEvent.submit(notifier),
-                );
-          },
-          child: const Text("Submit"),
+        BlocProvider(
+          create: (context) => getIt<DrawingApplicationBloc>(),
+          child: BlocListener<DrawingApplicationBloc, DrawingApplicationState>(
+            listenWhen: (context, state) => state.isSubmited,
+            listener: (context, state) {
+              context
+                  .read<DrawingApplicationBloc>()
+                  .add(const DrawingApplicationEvent.reset());
+              Navigator.of(context).pop();
+            },
+            child: BlocSelector<DrawingApplicationBloc, DrawingApplicationState,
+                bool>(
+              selector: (state) => state.isLoading ? true : false,
+              builder: (context, state) {
+                return state
+                    ? const Text("Submitting...")
+                    : BlocBuilder<DrawingApplicationBloc,
+                        DrawingApplicationState>(
+                        builder: (context, state) {
+                          return TextButton(
+                            onPressed: () {
+                              context.read<DrawingApplicationBloc>().add(
+                                    DrawingApplicationEvent.submit(notifier),
+                                  );
+                            },
+                            child: const Text("Submit"),
+                          );
+                        },
+                      );
+              },
+            ),
+          ),
         ),
       ],
     ),

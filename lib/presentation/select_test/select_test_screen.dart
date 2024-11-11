@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:patternulse/application/select_test/select_test.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:patternulse/presentation/core/theme.dart';
 import 'package:patternulse/presentation/select_test/specific_test_screen.dart';
@@ -9,7 +10,7 @@ class SelectTestScreen extends StatelessWidget {
   const SelectTestScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Scaffold(
       backgroundColor: antiflashWhite,
       appBar: AppBar(
@@ -39,18 +40,21 @@ class SelectTestScreen extends StatelessWidget {
               context,
               'Writing Based',
               Icons.edit,
+              0,
             ),
             const SizedBox(height: 16),
             _buildCategoryButton(
               context,
               'Drawing Based',
               Icons.brush,
+              1,
             ),
             const SizedBox(height: 16),
             _buildCategoryButton(
               context,
               'Speaking Based',
               Icons.mic,
+              2,
             ),
             const Gap(32),
           ],
@@ -60,12 +64,14 @@ class SelectTestScreen extends StatelessWidget {
   }
 
   Widget _buildCategoryButton(
-    BuildContext context,
+    context,
     String title,
     IconData icon,
+    int index,
   ) {
     return ElevatedButton.icon(
       onPressed: () {
+        SelectTest.changeGenTest(index);
         Navigator.push(
           context,
           MaterialPageRoute(

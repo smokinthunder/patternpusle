@@ -25,14 +25,13 @@ dependencies:
   get_it: ^7.7.0
   google_fonts: ^6.2.1
   injectable: ^2.4.4
+  # json_annotation: ^4.9.0
   numberpicker: ^2.1.2
-  scribble: 
+  scribble:
     git:
       url: https://github.com/smokinthunder/scribble.git
       ref: main
-      path: 
-
-  
+      path: null
   value_notifier_tools: ^0.1.2
 
 dev_dependencies:

@@ -14,23 +14,34 @@ class DrawingRepository implements IDrawingRepo {
   @override
   Future<Either<MainFailure, String>> uploadImage(Uint8List image) async {
     try {
-      final storageRef = FirebaseStorage.instance.ref().child('images2/${DateTime.now().toString()}');
+      final storageRef = FirebaseStorage.instance
+          .ref()
+          .child('images2/${DateTime.now().toString()}');
       await storageRef.putData(
-        image, SettableMetadata(contentType: 'image/png'));
-    final downloadURL = await storageRef.getDownloadURL();
-    return Right(downloadURL);
+          image, SettableMetadata(contentType: 'image/png'));
+      final downloadURL = await storageRef.getDownloadURL();
+      return Right(downloadURL);
     } catch (_) {
       return const Left(MainFailure.clientFailure());
     }
   }
-  @override
-    Future<Either<MainFailure, DrawingModel>> uploadDrawing(DrawingModel drawing) async {
-      try {
-        await firestore.collection('drawings').doc("we").set(drawing.toJson());
-        return Right(drawing);
-      } catch (_) {
-        return const Left(MainFailure.clientFailure());
-      }
-    }
 
+  @override
+  Future<Either<MainFailure, DrawingModel>> uploadDrawing(
+      DrawingModel drawing) async {
+    try {
+      print("uploading initiated");
+      await FirebaseFirestore.instance
+          .collection('drawings')
+          .doc(drawing.drawingUid)
+          .set(drawing.toJson())
+          // .set({"iass":"ciss"})
+          .then((value) => print("Data Uploaded "))
+          .catchError((error) => print("Failed to add drawing: $error"));
+      print("uploaded");
+      return Right(drawing);
+    } catch (_) {
+      return const Left(MainFailure.clientFailure());
+    }
+  }
 }

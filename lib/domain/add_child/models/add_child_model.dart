@@ -7,6 +7,7 @@ part 'add_child_model.g.dart';
 @freezed
 class AddChildModel with _$AddChildModel{
 const factory AddChildModel({
+  required int uid,
   required String name,
   required int age,
   required int gradeIndex,

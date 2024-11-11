@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
       home: MultiBlocProvider(
         providers: [
           BlocProvider(
+            create: (context) => getIt<DrawingApplicationBloc>(),
+          ),
+          BlocProvider(
             create: (context) => getIt<AddChildBloc>(),
           ),
           BlocProvider(
             create: (context) => getIt<GetPendingChildBloc>(),
-          ),
-          BlocProvider(
-            create: (context) => getIt<DrawingApplicationBloc>(),
           ),
         ],
         child: const Root(),

@@ -3,6 +3,7 @@ part 'drawing_point.freezed.dart';
 part 'drawing_point.g.dart';
 
 @freezed
+  // @JsonSerializable(explicitToJson: true)
 class DrawingPoint with _$DrawingPoint {
   const factory DrawingPoint({
     required double x,

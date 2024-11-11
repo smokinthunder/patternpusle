@@ -48,6 +48,7 @@ class AddChildBloc extends Bloc<AddChildEvent, AddChildState> {
     emit(state.copyWith(isLoading: true));
     await _addChildRepo.submitChild(
       AddChildModel(
+        uid: DateTime.now().millisecondsSinceEpoch,
         age: state.age,
         gender: state.gender,
         gradeIndex: state.gradeIndex,

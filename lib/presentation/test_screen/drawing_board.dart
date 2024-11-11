@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:patternulse/presentation/core/theme.dart';
+// import 'package:patternulse/presentation/core/theme.dart';
 import 'package:patternulse/presentation/test_screen/widgets/color_tool_bar.dart';
 import 'package:patternulse/presentation/test_screen/widgets/save_button.dart';
 import 'package:scribble/scribble.dart';
@@ -26,7 +26,7 @@ class DrawingBoardState extends State<DrawingBoard> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     notifier.setStrokeWidth(2);
     notifier.setAllowedPointersMode(ScribblePointerMode.all);
     return Scaffold(

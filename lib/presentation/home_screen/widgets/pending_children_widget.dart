@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:patternulse/application/child_application/get_pending_child/get_pending_child_bloc.dart';
+import 'package:patternulse/application/select_test/select_test.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:patternulse/presentation/core/theme.dart';
 import 'package:patternulse/presentation/home_screen/widgets/pending_children_card.dart';
@@ -39,6 +40,7 @@ class PendingChildrenWidget extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
+                        SelectTest.changeChildUid(state.children[index].uid);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
