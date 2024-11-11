@@ -32,6 +32,7 @@ dependencies:
       url: https://github.com/smokinthunder/scribble.git
       ref: main
       path: null
+  shared_preferences: ^2.3.3
   value_notifier_tools: ^0.1.2
 
 dev_dependencies:

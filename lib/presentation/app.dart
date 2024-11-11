@@ -6,9 +6,11 @@ import 'package:patternulse/application/drawing_application/bloc/drawing_applica
 import 'package:patternulse/domain/core/di/injectable.dart';
 import 'package:patternulse/presentation/core/theme.dart';
 import 'package:patternulse/presentation/root.dart';
+import 'package:patternulse/presentation/startuppages/get_started_page.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool skipOnBoarding;
+  const MyApp({super.key, required this.skipOnBoarding});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
             create: (context) => getIt<GetPendingChildBloc>(),
           ),
         ],
-        child: const Root(),
+        child: skipOnBoarding ? const Root() : const GetStartedPage(),
       ),
     );
   }

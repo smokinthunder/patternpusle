@@ -2,8 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:patternulse/presentation/app.dart';
 import 'package:patternulse/presentation/core/colors.dart';
 import 'package:patternulse/presentation/core/theme.dart';
+import 'package:patternulse/presentation/root.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:patternulse/presentation/core/theme.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -36,7 +39,17 @@ class GetStartedPage extends StatelessWidget {
             Text('Welcome to the', style: h1.copyWith(color: altColor)),
             Text('PATTERN PULSE', style: mtitle.copyWith(color: altColor)),
             const Gap(70),
-            const GetStartedButton(),
+            InkWell(
+                onTap: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  await prefs.setBool("skipOnBoarding", true);
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const MyApp(skipOnBoarding: true,),
+                    ),
+                  );
+                },
+                child: const GetStartedButton()),
             RichText(
               text: TextSpan(
                 text: "Already have an Account? ",
