@@ -25,15 +25,20 @@ class SignInWithGoogleButton extends StatelessWidget {
                             radius: 30,
                           ),
                         )
-                      : SignInButton(
-                          Buttons.google,
-                          onPressed: () {
-                            context.read<AuthBloc>().add(
-                                  const AuthEvent.signInWithGoogle(),
-                                );
-                          },
-                          text: 'Sign in with Google ',
-                        );
+                      : SizedBox(
+                        height: 40,
+                        child: SignInButton(
+                        
+                            Buttons.google,
+                            onPressed: () {
+                              context.read<AuthBloc>().add(
+                                    const AuthEvent.signInWithGoogle(),
+                                  );
+                            },
+                            text: 'Sign in with Google ',
+                            
+                          ),
+                      );
                 },
               )
             : BlocSelector<AuthBloc, AuthState, bool>(
