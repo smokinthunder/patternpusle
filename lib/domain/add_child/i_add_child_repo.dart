@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:patternulse/domain/add_child/models/add_child_model.dart';
-import 'package:patternulse/domain/core/failures/main_failure.dart';
+import 'package:patternpulse/domain/add_child/models/add_child_model.dart';
+import 'package:patternpulse/domain/core/failures/main_failure.dart';
 
 abstract class IAddChildRepo {
   Future<Either<MainFailure, AddChildModel>> submitChild(AddChildModel addChildModel);

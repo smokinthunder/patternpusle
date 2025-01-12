@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/core/theme.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/theme.dart';
 
 class PendingChildrenCard extends StatelessWidget {
   final String name;

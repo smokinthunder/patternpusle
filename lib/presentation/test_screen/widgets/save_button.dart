@@ -3,9 +3,9 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:patternulse/application/drawing_application/bloc/drawing_application_bloc.dart';
-import 'package:patternulse/domain/core/di/injectable.dart';
-import 'package:patternulse/presentation/core/colors.dart';
+import 'package:patternpulse/application/drawing_application/bloc/drawing_application_bloc.dart';
+import 'package:patternpulse/domain/core/di/injectable.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
 import 'package:scribble/scribble.dart';
 
 Widget saveButton(context, ScribbleNotifier notifier) {

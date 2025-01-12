@@ -4,9 +4,9 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:patternulse/domain/core/failures/main_failure.dart';
-import 'package:patternulse/domain/drawing/i_drawing_repo.dart';
-import 'package:patternulse/domain/drawing/models/drawing_model/drawing_model.dart';
+import 'package:patternpulse/domain/core/failures/main_failure.dart';
+import 'package:patternpulse/domain/drawing/i_drawing_repo.dart';
+import 'package:patternpulse/domain/drawing/models/drawing_model/drawing_model.dart';
 
 @LazySingleton(as: IDrawingRepo)
 class DrawingRepository implements IDrawingRepo {

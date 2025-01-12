@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:patternulse/presentation/app.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/core/theme.dart';
-import 'package:patternulse/presentation/root.dart';
+import 'package:patternpulse/presentation/app.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/theme.dart';
+import 'package:patternpulse/presentation/root.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:patternulse/presentation/core/theme.dart';
+// import 'package:patternpulse/presentation/core/theme.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:patternulse/application/child_application/get_pending_child/get_pending_child_bloc.dart';
-import 'package:patternulse/application/select_test/select_test.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/core/theme.dart';
-import 'package:patternulse/presentation/home_screen/widgets/pending_children_card.dart';
-import 'package:patternulse/presentation/select_test/select_test_screen.dart';
+import 'package:patternpulse/application/child_application/get_pending_child/get_pending_child_bloc.dart';
+import 'package:patternpulse/application/select_test/select_test.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/theme.dart';
+import 'package:patternpulse/presentation/home_screen/widgets/pending_children_card.dart';
+import 'package:patternpulse/presentation/select_test/select_test_screen.dart';
 
 class PendingChildrenWidget extends StatelessWidget {
   const PendingChildrenWidget({

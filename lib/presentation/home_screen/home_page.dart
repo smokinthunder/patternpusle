@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-// import 'package:patternulse/application/child_application/add_child/add_child_bloc.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/core/theme.dart';
-import 'package:patternulse/presentation/home_screen/widgets/app_bar_widget.dart';
-import 'package:patternulse/presentation/home_screen/widgets/completed_widget_tile.dart';
-import 'package:patternulse/presentation/home_screen/widgets/pending_children_widget.dart';
+// import 'package:patternpulse/application/child_application/add_child/add_child_bloc.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/theme.dart';
+import 'package:patternpulse/presentation/home_screen/widgets/app_bar_widget.dart';
+import 'package:patternpulse/presentation/home_screen/widgets/completed_widget_tile.dart';
+import 'package:patternpulse/presentation/home_screen/widgets/pending_children_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

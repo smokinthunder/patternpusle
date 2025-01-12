@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:patternulse/domain/add_child/i_add_child_repo.dart';
-import 'package:patternulse/domain/add_child/models/add_child_model.dart';
-import 'package:patternulse/domain/core/failures/main_failure.dart';
+import 'package:patternpulse/domain/add_child/i_add_child_repo.dart';
+import 'package:patternpulse/domain/add_child/models/add_child_model.dart';
+import 'package:patternpulse/domain/core/failures/main_failure.dart';
 
 @LazySingleton(as: IAddChildRepo)
 class AddChildRepository implements IAddChildRepo {

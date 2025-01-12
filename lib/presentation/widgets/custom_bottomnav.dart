@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:patternulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
 
 typedef _LetIndexPage = bool Function(int value);
 

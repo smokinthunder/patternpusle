@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:patternulse/presentation/test_screen/widgets/eraser_button.dart';
-import 'package:patternulse/presentation/test_screen/widgets/pen_button.dart';
+import 'package:patternpulse/presentation/test_screen/widgets/eraser_button.dart';
+import 'package:patternpulse/presentation/test_screen/widgets/pen_button.dart';
 import 'package:scribble/scribble.dart';
 
 Widget colorToolbar(BuildContext context, ScribbleNotifier notifier) {

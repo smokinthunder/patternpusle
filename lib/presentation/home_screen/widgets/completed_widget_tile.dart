@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/core/theme.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/theme.dart';
 
 class CompletedWidgetTile extends StatelessWidget {
   const CompletedWidgetTile({

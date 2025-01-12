@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:patternulse/application/select_test/select_test.dart';
-import 'package:patternulse/domain/drawing/i_drawing_repo.dart';
-import 'package:patternulse/domain/drawing/models/drawing_model/drawing_model.dart';
-import 'package:patternulse/domain/drawing/models/drawing_point/drawing_point.dart';
+import 'package:patternpulse/application/select_test/select_test.dart';
+import 'package:patternpulse/domain/drawing/i_drawing_repo.dart';
+import 'package:patternpulse/domain/drawing/models/drawing_model/drawing_model.dart';
+import 'package:patternpulse/domain/drawing/models/drawing_point/drawing_point.dart';
 import 'package:scribble/scribble.dart';
 
 part 'drawing_application_event.dart';

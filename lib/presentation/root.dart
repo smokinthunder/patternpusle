@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:patternulse/presentation/add_child/add_child_screen.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/home_screen/home_page.dart';
-import 'package:patternulse/presentation/profile_screen/profile_screen.dart';
-import 'package:patternulse/presentation/widgets/custom_bottomnav.dart';
+import 'package:patternpulse/presentation/add_child/add_child_screen.dart';
+import 'package:patternpulse/presentation/auth/signup_screen.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/home_screen/home_page.dart';
+import 'package:patternpulse/presentation/profile_screen/profile_screen.dart';
+import 'package:patternpulse/presentation/widgets/custom_bottomnav.dart';
 
 ValueNotifier<int> indexChangeNotifier = ValueNotifier(0);
 
@@ -13,7 +14,7 @@ class Root extends StatelessWidget {
   final _pages = const [
     HomePage(),
     AddChildScreen(),
-    ProfileScreen(),
+    SignUpScreen(),
   ];
 
   @override

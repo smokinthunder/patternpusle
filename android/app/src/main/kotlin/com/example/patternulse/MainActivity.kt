@@ -1,4 +1,4 @@
-package com.example.patternulse
+package com.example.patternpulse
 
 import io.flutter.embedding.android.FlutterActivity
 

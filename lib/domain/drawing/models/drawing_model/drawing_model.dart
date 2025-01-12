@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:patternulse/domain/drawing/models/drawing_point/drawing_point.dart';
+import 'package:patternpulse/domain/drawing/models/drawing_point/drawing_point.dart';
 part 'drawing_model.freezed.dart';
 part 'drawing_model.g.dart';
 

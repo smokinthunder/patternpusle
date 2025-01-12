@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:numberpicker/numberpicker.dart';
-import 'package:patternulse/application/child_application/add_child/add_child_bloc.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/core/theme.dart';
-import 'package:patternulse/presentation/root.dart';
+import 'package:patternpulse/application/child_application/add_child/add_child_bloc.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/theme.dart';
+import 'package:patternpulse/presentation/root.dart';
 
 class AddChildScreen extends StatelessWidget {
   const AddChildScreen({super.key});

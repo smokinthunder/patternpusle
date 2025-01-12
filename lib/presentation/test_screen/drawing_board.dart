@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-// import 'package:patternulse/presentation/core/theme.dart';
-import 'package:patternulse/presentation/test_screen/widgets/color_tool_bar.dart';
-import 'package:patternulse/presentation/test_screen/widgets/save_button.dart';
+// import 'package:patternpulse/presentation/core/theme.dart';
+import 'package:patternpulse/presentation/test_screen/widgets/color_tool_bar.dart';
+import 'package:patternpulse/presentation/test_screen/widgets/save_button.dart';
 import 'package:scribble/scribble.dart';
 
-// import 'package:patternulse/core/libraries/scribble-0.10.0+1/lib/scribble.dart';
+// import 'package:patternpulse/core/libraries/scribble-0.10.0+1/lib/scribble.dart';
 
 class DrawingBoard extends StatefulWidget {
   const DrawingBoard({

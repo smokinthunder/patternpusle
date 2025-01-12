@@ -1,7 +1,8 @@
-
 import 'package:flutter/material.dart';
-import 'package:patternulse/presentation/core/colors.dart';
-import 'package:patternulse/presentation/core/theme.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:patternpulse/application/auth/auth_bloc.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
+import 'package:patternpulse/presentation/core/theme.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({
@@ -19,9 +20,13 @@ class AppBarWidget extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Hey, Adam 👋",
-                style: h1,
+              BlocBuilder<AuthBloc, AuthState>(
+                builder: (context, state) {
+                  return Text(
+                    "Hey,  ${state.user.name==""?"User":state.user.name} 👋",
+                    style: h1,
+                  );
+                },
               ),
               Text(
                 "How you doing",
