@@ -8,6 +8,7 @@ part of 'add_child_model.dart';
 
 _$AddChildModelImpl _$$AddChildModelImplFromJson(Map<String, dynamic> json) =>
     _$AddChildModelImpl(
+      userid: json['userid'] as String,
       uid: (json['uid'] as num).toInt(),
       name: json['name'] as String,
       age: (json['age'] as num).toInt(),
@@ -18,6 +19,7 @@ _$AddChildModelImpl _$$AddChildModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AddChildModelImplToJson(_$AddChildModelImpl instance) =>
     <String, dynamic>{
+      'userid': instance.userid,
       'uid': instance.uid,
       'name': instance.name,
       'age': instance.age,

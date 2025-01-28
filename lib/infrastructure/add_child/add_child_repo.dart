@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:patternpulse/domain/add_child/i_add_child_repo.dart';
 import 'package:patternpulse/domain/add_child/models/add_child_model.dart';
@@ -29,6 +30,7 @@ class AddChildRepository implements IAddChildRepo {
       await firestore
           .collection('children')
           .where('isPending', isEqualTo: true)
+          .where('userid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
           .get()
           .then((value) {
         for (var element in value.docs) {

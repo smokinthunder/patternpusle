@@ -149,7 +149,10 @@ class AddChildScreen extends StatelessWidget {
                             const Gap(20),
                             CupertinoButton(
                               color: tangBlue,
-                              child: Text('Add Child', style: parah),
+                              child: Text(
+                                'Add Child',
+                                style: parah.copyWith(color: seasalt),
+                              ),
                               onPressed: () {
                                 context.read<AddChildBloc>().add(
                                       const AddChildEvent.submit(),

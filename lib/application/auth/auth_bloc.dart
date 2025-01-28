@@ -39,9 +39,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   void _onGetUser(AuthEvent event, Emitter<AuthState> emit) async {
     emit(state.copyWith(islogging: true));
     final user = await _userRepo.getUser();
-    user.fold(
-      (l) => emit(state.copyWith(islogging: false, islogged: false)),
-      (r) => emit(state.copyWith(user: r, islogging: false, islogged: true)),
+    // user.fold(
+    //   (l) => emit(state.copyWith(islogging: false, islogged: false)),
+    //   (r) => emit(state.copyWith(user: r, islogging: false, islogged: true)),
+    // );
+    emit(
+      user.fold(
+        (l){
+          return const AuthState(islogging: false, islogged: false, user: UserModel(uid: '', email: '', name: ''));
+
+        },
+        (r){
+          return AuthState(islogging: false, islogged: true, user: r);
+        }
+      )
     );
   }
 }

@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:patternpulse/application/auth/auth_bloc.dart';
 import 'package:patternpulse/domain/add_child/i_add_child_repo.dart';
 import 'package:patternpulse/domain/add_child/models/add_child_model.dart';
 
@@ -10,6 +13,7 @@ part 'add_child_bloc.freezed.dart';
 
 @injectable
 class AddChildBloc extends Bloc<AddChildEvent, AddChildState> {
+  late BuildContext context;
   final IAddChildRepo _addChildRepo;
 
   AddChildBloc(this._addChildRepo) : super(AddChildState.initial()) {
@@ -46,8 +50,18 @@ class AddChildBloc extends Bloc<AddChildEvent, AddChildState> {
 
   void _onSubmit(AddChildEvent event, Emitter<AddChildState> emit) async {
     emit(state.copyWith(isLoading: true));
+    print("on");
+    final userId =
+        FirebaseAuth.instance.currentUser?.uid; // Get user ID from the current state
+    print(userId);
+    if (userId == null) {
+      emit(state.copyWith(isLoading: false, isSubmited: false));
+      return;
+    }
     await _addChildRepo.submitChild(
       AddChildModel(
+        userid: userId, // Add null check
+        // userid: FirebaseAuth.instance.currentUser!.uid ,
         uid: DateTime.now().millisecondsSinceEpoch,
         age: state.age,
         gender: state.gender,
@@ -60,7 +74,6 @@ class AddChildBloc extends Bloc<AddChildEvent, AddChildState> {
       isLoading: false,
       isSubmited: true,
     ));
-    
   }
 
   void _onReset(AddChildEvent event, Emitter<AddChildState> emit) {

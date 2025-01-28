@@ -79,7 +79,7 @@ class SelectTestScreen extends StatelessWidget {
           ),
         );
       },
-      icon: Icon(icon, size: 32),
+      icon: Icon(icon, size: 32, color: seasalt),
       label: Text(
         title,
         style: parah,
