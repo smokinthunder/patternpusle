@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced_seekbar/flutter_advanced_seekbar.dart';
+import 'package:patternpulse/presentation/core/colors.dart';
 // import 'package:patternpulse/presentation/core/theme.dart';
 import 'package:patternpulse/presentation/test_screen/widgets/color_tool_bar.dart';
 import 'package:patternpulse/presentation/test_screen/widgets/save_button.dart';
@@ -18,6 +19,7 @@ class DrawingBoard extends StatefulWidget {
 
 class DrawingBoardState extends State<DrawingBoard> {
   late ScribbleNotifier notifier;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -26,28 +28,54 @@ class DrawingBoardState extends State<DrawingBoard> {
   }
 
   @override
-  Widget build( context) {
+  Widget build(context) {
     notifier.setStrokeWidth(2);
     notifier.setAllowedPointersMode(ScribblePointerMode.all);
     return Scaffold(
-    
       backgroundColor: Theme.of(context).colorScheme.surface,
-      
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0),
         child: Column(
           children: [
             Expanded(
-              child: Card(
-                clipBehavior: Clip.hardEdge,
-                margin: EdgeInsets.zero,
-                color: Colors.white,
-                // surfaceTintColor: Colors.white,
-                child: Scribble(
-
-                  notifier: notifier,
-                  drawPen: true,
-                ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: SingleChildScrollView(
+                      
+                     controller: _scrollController,
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 1920,
+                        child: Card(
+                          clipBehavior: Clip.hardEdge,
+                          margin: EdgeInsets.zero,
+                          color: Colors.white,
+                          // surfaceTintColor: Colors.white,
+                          child: Scribble(
+                            notifier: notifier,
+                            drawPen: true,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 600,
+                    child: AdvancedVerticalSeekBar(
+                      savoyBlue,
+                      15,
+                      savoyBlue,
+                      
+                      fillProgress: true,
+                      seekBarProgress: (progress) => setState(() {
+                        _scrollController.jumpTo(_scrollController.position.maxScrollExtent * progress / 100);
+                      }),
+                    
+                    
+                    ),
+                  )
+                ],
               ),
             ),
             Padding(
